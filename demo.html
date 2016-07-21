@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reseponse</title>
+    <link rel="stylesheet" href="public/css/response.css">
+</head>
+<body>
+    <div class="container" id="result"></div>
+    <script id="demoTemplate" type="text/x-handlebars-template">
+        <div class="row">
+            {{#each data}}
+                <div class="col-md-4 col-sm-6 col-lg-{{width}} {{#compare height 1}} row-{{height}} {{#compare x 1}}side{{/compare}} {{/compare}}" >
+                    <div class="item">{{name}}</div>
+                </div>
+            {{/each}}
+        </div>
+
+    </script>
+    <script src="jquery-1.7.2.js"></script>
+    <script src="handlebars-v3.0.3.js"></script>
+    <script src="public/js/demo.js"></script>
+</body>
+</html>

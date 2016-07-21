@@ -1,0 +1,99 @@
+@import "base/reset.css";
+@import "base/atom.css";
+
+.main {
+    width: 1260px;
+    margin: auto;
+}
+.main-hd {
+    margin: 15px 0 15px;
+}
+.main-hd h1 {
+    text-align: center;
+    font-size: 24px;
+}
+.main-bd {
+    width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.sort-area {
+    margin-right: -4px;
+}
+.sort{
+    display: inline-block;
+    width:400px;
+    height: 1000px;
+    margin: 10px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.sort-unit,.sort-unit-temp {
+    float: left;
+    margin: 4px;
+    border: 1px dashed #ccc;
+    box-sizing: border-box;
+    position: relative;
+}
+.sort-unit-temp {
+    border: 1px dashed #e04b43;
+}
+
+.sort-41 {
+    width: 384px;
+    height: 90px;
+}
+.sort-31 {
+    width: 286px;
+    height: 90px;
+}
+.sort-21 {
+    width: 188px;
+    height: 90px;
+}
+.sort-11 {
+    width: 90px;
+    height: 90px;
+}
+
+.sort-42 {
+    width: 384px;
+    height: 188px;
+}
+.sort-32 {
+    width: 286px;
+    height: 188px;
+}
+.sort-22 {
+    width: 188px;
+    height: 188px;
+}
+.sort-12 {
+    width: 90px;
+    height: 188px;
+}
+
+.sort-solid {
+    border: 1px solid #ccc;
+}
+
+.sort-box {
+    display: block;
+    width: 90px;
+    height: 90px;
+}
+
+.clearfix:before,.clearfix:after {
+    content: " ";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    font-size: 0;
+}
+.clearfix:after {
+    clear: both;
+}

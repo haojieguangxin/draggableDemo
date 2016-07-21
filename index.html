@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="public/css/index.css">
+</head>
+<body>
+    <div class="main">
+        <div class="main-hd">
+            <h1>拖动</h1>
+        </div>
+        <div class="main-bd clearfix">
+            <div id="result" class="sort" style="position: relative">
+                <ul class="sort-area">
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                    <li class="sort-unit sort-11 js-unit"></li>
+                </ul>
+            </div>
+            <div id="queue" class="sort">
+                <ul class="sort-area">
+                    <li class="sort-unit sort-41 sort-solid" data-x="4" data-y="1" data-from="1" data-index="1">Banner 4*1</li>
+                    <li class="sort-unit sort-31 sort-solid" data-x="3" data-y="1" data-from="1" data-index="2">Banner 3*1</li>
+                    <li class="sort-unit sort-21 sort-solid" data-x="2" data-y="1" data-from="1" data-index="3">Banner 2*1</li>
+                    <li class="sort-unit sort-21 sort-solid" data-x="2" data-y="1" data-from="1" data-index="4">Banner 2*1</li>
+                    <li class="sort-unit sort-11 sort-solid" data-x="1" data-y="1" data-from="1" data-index="5">Banner 1*1</li>
+                    <li class="sort-unit sort-12 sort-solid" data-x="1" data-y="2" data-from="1" data-index="6">Banner 1*2</li>
+                    <li class="sort-unit sort-12 sort-solid" data-x="1" data-y="2" data-from="1" data-index="7">Banner 1*2</li>
+                    <li class="sort-unit sort-11 sort-solid" data-x="1" data-y="1" data-from="1" data-index="8">Banner 1*1</li>
+                    <li class="sort-unit sort-21 sort-solid" data-x="2" data-y="1" data-from="1" data-index="9">Banner 2*1</li>
+                    <li class="sort-unit sort-11 sort-solid" data-x="1" data-y="1" data-from="1" data-index="10">Banner 1*1</li>
+                    <li class="sort-unit sort-22 sort-solid" data-x="2" data-y="2" data-from="1" data-index="11">Banner 2*2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="jquery-1.7.2.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="underscore.js"></script>
+    <script src="public/js/index.js"></script>
+    <script>
+//        $(function() {
+//            var $result = $('#result');
+//
+//            var prevXY = {
+//                x: 0,
+//                y: 0
+//            };
+//
+//            var addNum = 0;
+//
+//            $('.sort-solid').draggable({
+//                cursor: 'move',
+//                helper: function() {
+//                    return $('<ul class="sort-area"></ul>').append($(this).clone());
+//                },
+//                appendTo: $result,
+//                start: function() {
+//                    prevXY = {
+//                        x: 0,
+//                        y: 0
+//                    };
+//                    addNum = 0;
+//                },
+//                drag: function(event, ui) {
+//                    dragMove(ui);
+//                }
+//            });
+//            $result.droppable({
+//                drop: function(event, ui) {
+////                    var x = 0, y = 0;
+////                    // i记录的是行数，就是布局框一共有多少行
+////                    for(var i = 0; i < 4; i++) {
+////                        // 一个框98px，当大于80px的时候就算到后面的框
+////                        if(80 * i <= ui.position.left && ui.position.left < 80 + 98 * i) {
+////                            x = i + 1;
+////                            for(var j = 0; j < 10; j++) {
+////                                if(80 * j <= ui.position.top && ui.position.top < 80 + 98 * j) {
+////                                    y = j + 1;
+////                                    break;
+////                                }
+////                            }
+////                            break;
+////                        }
+////                    }
+////                    if (x == 0 || y == 0) {
+////                        // 拖动的元素不在布局框中
+////                        console.log("拖动的元素不在布局框中");
+////                    }
+////                    // 由于x的初始值为1，不是0，所以横向的最大值为5
+////                    else if (x + parseInt(ui.helper.find('li').data('x')) > 5) {
+////                        // 拖动的元素在布局框中放不下
+////                        console.log("拖动的元素在布局框中横向超长");
+////                    }
+////                    else if (y + parseInt(ui.helper.find('li').data('y')) > 11) {
+////                        // 拖动的元素在布局框中放不下
+////                        console.log("拖动的元素在布局框中纵向超长");
+////                    }
+////                    // TODO: 互相覆盖的问题待定
+////                    // 正常的情况下的处理
+////                    else {
+////                        // TODO: 记录位置
+////                        var $clone = ui.helper;
+////                        if ($clone.find('li').attr('data-from')) {
+////                            $clone = ui.helper.clone();
+////                            ui.draggable.hide();
+////                        }
+////
+////                        $clone.css({
+////                            'position': 'absolute',
+////                            'left': 4 + 98 * (x-1) + 'px',
+////                            'top': 4 + 98 * (y-1) + 'px',
+////                            'background-color': '#fff'
+////                        }).removeClass('ui-draggable-dragging');
+////                        $clone.find('li').removeAttr('data-from');
+////                        $clone.draggable({
+////                            cursor: 'move'
+////                        });
+////                        $(result).append($clone);
+////                    }
+//
+//
+//
+//
+//                    var $clone = ui.helper;
+//                    var $temp = $('.js-temp');
+//                    var uiWidth = parseInt($clone.find('li').data('x')), uiHeight = parseInt($clone.find('li').data('y'));
+//                    var uiSum = uiWidth * uiHeight;
+//
+//                    if ($clone.find('li').attr('data-from')) {
+//                        $clone = ui.helper.clone();
+//                        ui.draggable.hide();
+//                    }
+//
+//
+//                    $clone.draggable({
+//                        cursor: 'move',
+//                        drag: function() {
+//                            dragMove(ui);
+//                        }
+//                    });
+//
+//                    $result.find('.js-unit:not(:visible)').remove();
+//                    $result.find('.js-unit-calc').hide();
+//
+//                    for (var i = 0; i < addNum; i++) {
+//                        $temp.after('<li class="sort-unit sort-11 js-unit"></li>')
+//                    }
+//
+//                    $temp.after($clone.find('li'));
+//
+//                    for (var j = 0; j < uiSum; j++) {
+//                        $temp.after('<li class="sort-unit sort-11 js-unit-calc" style="display: none"></li>')
+//                    }
+//                    $temp.remove();
+//                }
+//            });
+//
+//            function dragMove(ui) {
+//                var x = 0, y = 0;
+//                var $li = ui.helper.find('li');
+//                var uiWidth = parseInt($li.data('x')), uiHeight = parseInt($li.data('y'));
+//                // i记录的是行数，就是布局框一共有多少行
+//                for(var i = 0; i < 4; i++) {
+//                    // 一个框98px，当大于80px的时候就算到后面的框
+//                    if(80 * i <= ui.position.left && ui.position.left < 80 + 98 * i) {
+//                        x = i + 1;
+//                        for(var j = 0; j < 10; j++) {
+//                            if(80 * j <= ui.position.top && ui.position.top < 80 + 98 * j) {
+//                                y = j + 1;
+//                                break;
+//                            }
+//                        }
+//                        break;
+//                    }
+//                }
+//
+//                if ((prevXY.x != x || prevXY.y != y) && x != 0 && x + uiWidth <= 5) {
+//
+//                    var index = (y - 1) * 4 + x - 1;
+//
+//                    prevXY = {
+//                        x: x,
+//                        y: y
+//                    };
+//
+//                    // 拖动的元素在布局框中放不下
+//                    $result.find('.js-temp').remove();
+//                    $result.find('.js-unit').show();
+//                    $result.find('.js-unit-calc').hide();
+//
+//                    var $placeUnit = $result.find('li:not(.sort-solid)');
+//                    var overlap = false;
+//                    for (var k = index; k < index + uiWidth; k++) {
+//                        if ($placeUnit.eq(k).hasClass('js-unit-calc')) {
+//                            overlap = true;
+//                            break;
+//                        }
+//                    }
+//
+//                    // 和其他已經拖動的元素有重疊的部分
+//                    if (overlap) {
+//                        for (var m = (y - 1) * 4; m < y * 4; m++) {
+//                            $placeUnit.eq(m).show();
+//                        }
+//                    }
+//
+//                    for (var l = index; l < index + uiWidth; l++) {
+//                        var $curLi = $placeUnit.eq(l);
+//                        if ($curLi.hasClass('js-unit')) {
+//                            $curLi.hide();
+//                        }
+//                        else if ($curLi.hasClass('js-unit-calc')) {
+//                            addNum = 4 - (x - 1) - uiWidth;
+//                            $curLi.hide();
+//                        }
+//                        else {
+//                            addNum = 4 - (x - 1) - uiWidth;
+//                            break;
+//                        }
+//                    }
+//
+//                    $placeUnit.eq(k).before('<li class="sort-unit-temp js-temp sort-' + uiWidth + uiHeight + '"></li>');
+//                }
+//            }
+//        } );
+    </script>
+</body>
+</html>
